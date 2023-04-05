@@ -1,0 +1,51 @@
+# BERT encoder service
+bert_service:  
+  target_api: model_compute
+  operations: [encoding]
+  options: 
+    gpu_models: []
+    load_gpu_model: false
+    cpu_models: [bert_base]
+    load_cpu_model: true
+
+# Spacy encoder service
+spacy_service: 
+  target_api: model_compute
+  operations: [encoding]
+  options: 
+    gpu_models: []
+    load_gpu_model: false
+    cpu_models: [en_core_web_lg]
+    load_cpu_model: true
+
+# GPT-3 prompt tuned service for natural language generation    
+gpt3_service:
+  target_api: nlg
+  options:
+    max_continuation_counter: 1
+    max_history: 5 
+    url:
+
+# ChatGPT prompt tuned service for natural language generation    
+chatgpt_service:
+  target_api: nlg
+  options:
+    max_continuation_counter: 1
+    max_history: 5 
+    url:
+
+# GPT-4 prompt tuned service for natural language generation    
+gpt4_service:
+  target_api: nlg
+  options:
+    max_continuation_counter: 1
+    max_history: 5 
+    url:
+
+# Ducking NER service
+duckling: 
+  target_api: 
+  options:
+    model: flair
+    load_cpu_model: true
+    load_gpu_model: false

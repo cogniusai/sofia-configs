@@ -1,0 +1,24 @@
+{
+    "botId": "<Your bot id>",	
+    "deploymentId": "<Your web deployment id>",
+    "secret": "<Your web deployment secret>",
+
+    "ai": {
+        "agentId": "<Your bot id>"
+    },
+
+    "channel":{
+        "options":{
+            "maxIdleTime":100,
+            "idleHandle":{
+                "reminderTime": 30,
+                "reminderText":[
+                    "Are you there?"
+                ]
+    
+            }
+        }
+        
+    }
+    
+}

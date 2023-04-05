@@ -1,0 +1,37 @@
+{
+    "botId": "<Your bot id>",	
+    "deploymentId": "<Your web deployment id>",
+    "secret": "<Your web deployment secret>",
+
+    "ai": {
+        "agentId": "<Your bot id>"
+    },
+
+    "channel":{
+        "options":{
+            "maxIdleTime":100,
+            "idleHandle":{
+                "reminderTime": 30,
+                "reminderText":[
+                    "Are you there?"
+                ]
+    
+            }
+        }
+        
+    },
+    
+    "stt": {
+        "language": "en-US",
+        "hints":{
+            "phrases":[]
+        }
+    },
+
+    "tts": {
+        "language": "en-US",
+        "options":{
+            "voiceType": "en-US-Wavenet-F"
+        }
+    }
+}

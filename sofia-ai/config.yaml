@@ -1,0 +1,59 @@
+# Common config
+common:
+  compute_service: http://127.0.0.1:8008/
+  db_connection_url: your-mongodb-url
+  db_name: ai_service
+  duckling_ner_service: http://127.0.0.1:8000/
+  sofia_nlg_service: http://127.0.0.1:4000/
+  ip: 0.0.0.0
+  log_level: debug
+  log_path: ../logger/log
+  port: 8004
+  translator_token: ../config/google_credentials.json
+
+# NLU config
+encode:
+  embed_large:
+    env: CPU
+    model: bert_base
+    name: bert_service
+
+  embed_small:
+    env: CPU
+    model: en_core_web_lg
+    name: spacy_service
+
+  endpoint: model/compute
+
+# NER config
+ner:
+  name_ext:
+    env: CPU
+    model: flair
+    name: duckling
+
+  endpoint: ner
+
+# NLG config
+nlg:
+  model: gpt3
+#  model: chatgpt
+
+  gpt3:
+    name: gpt3_service
+
+  chatgpt:
+    name: chatgpt_service
+
+  gpt4:
+    name: gpt4_service
+
+  sofia:
+    init_endpoint: init
+    generate_endpoint: generate
+
+  endpoint: nlg
+
+# Duckling NER server config
+duckling_ner:
+  endpoint: parse

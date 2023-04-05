@@ -1,0 +1,60 @@
+###> symfony/framework-bundle ###
+APP_ENV=prod
+APP_SECRET=c1adeea423e77e2cbc1a4ce64937d1f5
+APP_URL=/iva-list
+#TRUSTED_PROXIES=127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
+#TRUSTED_HOSTS='^(localhost|example\.com)$'
+###< symfony/framework-bundle ###
+
+###> doctrine/doctrine-bundle ###
+PLATFORM_DB=sofia_studio
+DATABASE_URL=mysql://your-db-username:your-db-password@your-db-host/${PLATFORM_DB}?serverVersion=your-server-version
+###< doctrine/doctrine-bundle ###
+
+###> nelmio/cors-bundle ###
+CORS_ALLOW_ORIGIN=^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$
+###< nelmio/cors-bundle ###
+
+###> AI-services ###
+API_URL=http://127.0.0.1
+WEB_API_URL=http://127.0.0.1:3002
+TELEPHONY_API_URL=https://127.0.0.1:3003
+ASSETS_CDN_URL=http://127.0.0.1:8080/assets
+API_PORT_1=8004
+API_PORT_2=8004
+API_PORT_3=8004
+API_PORT_4=8004
+DESIGN_TYPE_DM=decisionmaking
+DESIGN_TYPE_IS=infoseek
+DESIGN_TYPE_IU=infoutter
+API_PATH=config/update
+API_DELETE_PATH=config/delete
+API_NAVIGATOR=navigator
+NAVIGATOR_PATH=navigator/create
+NAVIGATOR_DELETE_PATH=navigator/delete
+###> AI-services ###
+
+###> Data Layer ###
+DATALAYER_API_URL=http://127.0.0.1:3002
+###> Data Layer ###
+
+###> twilio account credentials ###
+TWILIO_ACCOUNT_SID=your-twilio-sid
+TWILIO_AUTH_TOKEN=your-twilio-auth-token
+###< twilio account credentials ###
+
+###> aes encryption ###
+CIPHER_ALGO=aes-128-gcm
+ENCRYPTION_SECRET=1mYL1Tr9z46D
+ENCRYPTION_IV=7ce1fdcfac99d37d5e19eab2
+###< aes encryption ###
+
+###> google cloud storage credentials - optional ###
+GOOGLE_CLOUD_CREDENTIALS=
+GOOGLE_IMAGE_STORAGE_URL=
+GOOGLE_STORAGE_IMG_BUCKET= 
+###> google cloud storage credentials ###
+
+###> symfony/lock ###
+LOCK_DSN=semaphore
+###< symfony/lock ###

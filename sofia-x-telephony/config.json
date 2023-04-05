@@ -1,0 +1,88 @@
+{
+
+    "session":{
+        "maxIdleTime":600,
+        "useDistributor": true,
+        "distributor":{
+            "maxIdleTime":600,
+            "residualCleanTime": 60,
+            "ackTimeOut": 5,
+            "redis":{
+                "ip": "127.0.0.1",
+                "port": "6379",
+                "password": ""
+            }
+        }
+    },
+
+    "ai": {
+        "ssl": false,
+        "host": "127.0.0.1",
+        "port": 8004
+    },
+
+    "channel": {
+        "name": "twilio",
+        "options": {
+            "port": "3003",
+            "make_call": {
+                "to": "sip:<user>:<password>@<host>:<port>",
+                "from": "<twilio_sip_uri_username>",
+                "sipAuthPassword": "<password>",
+                "sipAuthUsername": "<user>"
+            },
+            "make_phone_call": {
+                "from": "<twilio_phone_number>"
+            },
+            "transfer": {
+                "to": "sip:<user>:<password>@<host>:<port>",
+                "sipUserName":"<user>",
+                "sipPassword":"<password>"
+            },
+            "twilioAccountSid": "<your twilio account sid>",
+            "twilioAuthToken": "<your twilio auth token>"
+        }
+    },
+
+
+    "stt": {
+        "service": "google_stt",
+        "language": "en-US",
+        "encoding": "MULAW",
+        "sampleRateHertz": 8000,
+        "timeout": 30,
+        "hints":{
+            "phrases":[]
+        },
+        "options":{
+            "credentials": "./config/google_credentials.json",
+            "profanityFilter": false,
+            "enableWordTimeOffsets": false,
+            "model": "phone_call",
+            "useEnhanced": true,
+            "interimResults": false,
+            "single_utterance": true
+        }
+    },
+
+    "tts": {
+        "service": "google_tts",
+        "language": "en-US",
+        "encoding": "LINEAR16",
+        "cache": false,
+        "options":{
+            "voiceType": "en-US-Wavenet-F",
+            "credentials": "./config/google_credentials.json"
+        }
+    },
+    
+    "general": {
+        "dataSync": {
+            "onTalk": "",
+            "onEnd": ""
+        },
+        "inputTextOnlyGuidance": [
+        ]
+    }
+
+}
